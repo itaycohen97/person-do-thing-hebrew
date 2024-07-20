@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let wordList = ["glasses", "intelligence"];
+  let wordList = ["משקפיים", "חריף", "קרח"];
 
   const targetWordSpan = document.getElementById("target-word-span");
   const newWordButton = document.getElementById("new-word-button");
@@ -27,10 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
     howToPlayInstructions.classList.toggle("hidden");
   });
 
-  fetch("../assets/words.txt")
+  fetch("assets/words.txt")
     .then((response) => response.text())
     .then((content) => {
       wordList = content.split("\n").filter((word) => word.trim().length !== 0);
+      console.log(wordList);
       shuffleWord();
     });
 });
