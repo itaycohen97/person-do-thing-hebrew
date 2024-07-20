@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let wordList = ["משקפיים", "חריף", "קרח"];
+  let wordList = ["ברק שמש"];
 
   const targetWordSpan = document.getElementById("target-word-span");
   const newWordButton = document.getElementById("new-word-button");
