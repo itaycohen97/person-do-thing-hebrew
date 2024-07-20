@@ -31,11 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
     howToPlayInstructions.classList.toggle("hidden");
   });
 
+  delay(2000).then(() => console.log("Waited 2 seconds"));
   fetch("assets/words.txt")
     .then((response) => response.text())
     .then((content) => {
-      delay(2000).then(() => console.log("Waited 2 seconds"));
-
       wordList = content.split("\n").filter((word) => word.trim().length !== 0);
       shuffleWord();
     });
