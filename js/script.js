@@ -13,6 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
       wordList[Math.floor(Math.random() * wordList.length)];
   };
 
+  function delay(time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+  }
+
   newWordButton.addEventListener("click", () => {
     shuffleWord();
   });
@@ -31,12 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((response) => response.text())
     .then((content) => {
       wordList = content.split("\n").filter((word) => word.trim().length !== 0);
-      function delay(time) {
-        return new Promise(resolve => setTimeout(resolve, time));
-      }
-      
-      delay(1000).then(() => console.log('ran after 1 second1 passed'));
-      
+      delay(2000).then(() => console.log("Waited 2 seconds"));
+
       shuffleWord();
     });
 });
