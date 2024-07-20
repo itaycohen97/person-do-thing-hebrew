@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((response) => response.text())
     .then((content) => {
       wordList = content.split("\n").filter((word) => word.trim().length !== 0);
-      console.log(wordList);
       shuffleWord();
     });
 });
