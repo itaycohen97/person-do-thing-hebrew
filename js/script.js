@@ -34,9 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("assets/words.txt")
     .then((response) => response.text())
     .then((content) => {
-      wordList = content.split("\n").filter((word) => word.trim().length !== 0);
       delay(2000).then(() => console.log("Waited 2 seconds"));
 
+      wordList = content.split("\n").filter((word) => word.trim().length !== 0);
       shuffleWord();
     });
 });
